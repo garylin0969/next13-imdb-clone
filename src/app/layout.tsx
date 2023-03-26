@@ -1,6 +1,7 @@
 import Header from '@/components/Header';
-import './globals.css';
+import Navbar from '@/components/Navbar';
 import Providers from './Providers';
+import './globals.css';
 
 export const metadata = {
     title: 'IMDb Clone',
@@ -13,6 +14,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <body>
                 <Providers>
                     <Header />
+                    <Navbar />
                     {children}
                 </Providers>
             </body>
