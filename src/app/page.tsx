@@ -1,5 +1,5 @@
 import Results from '@/components/Results';
-import { CardInfo } from '../../types';
+import { CardInfo } from '../types';
 
 const API_KEY = process.env.API_KEY;
 

@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { FiThumbsUp } from 'react-icons/fi';
-import { CardInfo } from '../../types';
+import { CardInfo } from '../types';
 
 interface ResultProps {
     result: CardInfo;

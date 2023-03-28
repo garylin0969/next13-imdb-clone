@@ -1,4 +1,4 @@
-import { CardInfo } from '../../types';
+import { CardInfo } from '../types';
 import Card from './Card';
 
 interface ResultsProps {
