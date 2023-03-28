@@ -1,4 +1,5 @@
 import Results from '@/components/Results';
+import { CardInfo } from '../../types';
 
 const API_KEY = process.env.API_KEY;
 
@@ -6,6 +7,13 @@ interface HomeProps {
     searchParams: {
         genre?: string;
     };
+}
+
+interface ResponseData {
+    page: number;
+    results: CardInfo[];
+    total_pages: number;
+    total_results: number;
 }
 
 export default async function Home({ searchParams }: HomeProps) {
@@ -19,8 +27,8 @@ export default async function Home({ searchParams }: HomeProps) {
     if (!res.ok) {
         throw new Error('Failed to fetch data');
     }
-    const data = await res.json();
-    const results = data.results;
+    const data: ResponseData = await res.json();
+    const results: CardInfo[] = data.results;
 
     return (
         <>
