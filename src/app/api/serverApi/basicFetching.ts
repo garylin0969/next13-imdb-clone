@@ -17,7 +17,7 @@ export const staticFetching = async (url: string, params?: object) => {
     if (!res.ok) {
         throw new Error(`Failed to fetch data on ${params ? url + '?' + searchParams : url}`);
     }
-    return res.json();
+    return await res.json();
 };
 // revalidate cached data at a timed interval
 export const revalidateFetching = async (url: string, millisecond: number, params?: object) => {
@@ -29,7 +29,7 @@ export const revalidateFetching = async (url: string, millisecond: number, param
     if (!res.ok) {
         throw new Error(`Failed to fetch data on ${params ? url + '?' + searchParams : url}`);
     }
-    return res.json();
+    return await res.json();
 };
 // fresh data on every fetch request
 export const dynamicFetching = async (url: string, params?: object) => {
@@ -41,5 +41,5 @@ export const dynamicFetching = async (url: string, params?: object) => {
     if (!res.ok) {
         throw new Error(`Failed to fetch data on ${params ? url + '?' + searchParams : url}`);
     }
-    return res.json();
+    return await res.json();
 };
