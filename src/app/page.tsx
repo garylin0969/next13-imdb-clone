@@ -1,6 +1,6 @@
 import Results from '@/components/Results';
 import { CardInfo } from '../types';
-import { revalidateFetching } from './api/severApi/basicFetching';
+import { revalidateFetching } from './api/serverApi/basicFetching';
 
 const API_KEY = process.env.NEXT_PUBLIC_API_KEY;
 
