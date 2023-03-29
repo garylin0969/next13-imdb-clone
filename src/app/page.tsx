@@ -1,7 +1,8 @@
 import Results from '@/components/Results';
 import { CardInfo } from '../types';
+import { revalidateFetching } from './api/severApi/basicFetching';
 
-const API_KEY = process.env.API_KEY;
+const API_KEY = process.env.NEXT_PUBLIC_API_KEY;
 
 interface HomeProps {
     searchParams: {
@@ -18,17 +19,13 @@ interface ResponseData {
 
 export default async function Home({ searchParams }: HomeProps) {
     const genre: string = searchParams.genre || 'fetchTrending';
-    const res: Response = await fetch(
-        `https://api.themoviedb.org/3/${
-            genre === 'fetchTopRated' ? 'movie/top_rated' : 'trending/all/week'
-        }?api_key=${API_KEY}&language=en-US&page=1`,
-        { next: { revalidate: 1000 } }
+    const query: object = { api_key: API_KEY, language: 'en-US', page: 1 };
+    const data: ResponseData = await revalidateFetching(
+        `https://api.themoviedb.org/3/${genre === 'fetchTopRated' ? 'movie/top_rated' : 'trending/all/week'}`,
+        1000,
+        query
     );
-    if (!res.ok) {
-        throw new Error('Failed to fetch data');
-    }
-    const data: ResponseData = await res.json();
-    const results: CardInfo[] = data.results;
+    const results: CardInfo[] = data?.results;
 
     return (
         <>
