@@ -1,4 +1,4 @@
-export interface CardInfo {
+export interface MovieInfo {
     adult: boolean;
     backdrop_path: string;
     id: number;
@@ -16,4 +16,11 @@ export interface CardInfo {
     video: boolean;
     vote_average: number;
     vote_count: number;
+}
+
+export interface MoviesResponse {
+    page: number;
+    results: MovieInfo[];
+    total_pages: number;
+    total_results: number;
 }
