@@ -1,3 +1,5 @@
+import { getMovie } from '@/app/api/serverApi/movieApi';
+import { MovieInfo } from '@/types';
 import Image from 'next/image';
 
 interface MoviePageProps {
@@ -6,14 +8,9 @@ interface MoviePageProps {
     };
 }
 
-const getMovie = async (movieId: string) => {
-    const res = await fetch(`https://api.themoviedb.org/3/movie/${movieId}?api_key=${process.env.NEXT_PUBLIC_API_KEY}`);
-    return await res.json();
-};
-
 const MoviePage = async ({ params }: MoviePageProps) => {
-    const movieId = params.id;
-    const movie = await getMovie(movieId);
+    const movieId: string = params.id;
+    const movie: MovieInfo = await getMovie(movieId);
     return (
         <>
             <div className="w-full">
