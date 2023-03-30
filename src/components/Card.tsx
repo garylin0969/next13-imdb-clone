@@ -1,10 +1,10 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { FiThumbsUp } from 'react-icons/fi';
-import { CardInfo } from '../types';
+import { MovieInfo } from '../types';
 
 interface ResultProps {
-    result: CardInfo;
+    result: MovieInfo;
 }
 
 const Card = ({ result }: ResultProps) => {
