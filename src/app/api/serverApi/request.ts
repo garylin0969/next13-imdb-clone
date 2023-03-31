@@ -1,16 +1,9 @@
+import { baseURL } from '@/utils/constants';
+import objectUtils from '@/utils/objectUtils';
 import 'server-only';
 
-const baseURL: string = 'https://api.themoviedb.org/3';
-
-const objectValuesToString = (obj: object): Record<string, string> => {
-    return Object.entries(obj).reduce((acc: Record<string, string>, [key, value]) => {
-        acc[key] = String(value);
-        return acc;
-    }, {});
-};
-
 const urlSearchParams = (params?: object): URLSearchParams | boolean => {
-    return params ? new URLSearchParams(objectValuesToString(params)) : false;
+    return params ? new URLSearchParams(objectUtils.valuesToString(params)) : false;
 };
 
 // cache: 'force-cache'
