@@ -1,6 +1,6 @@
 import Results from '@/components/Results';
 import { MovieInfo, MoviesResponse } from '../types';
-import { showMovies } from './api/serverApi/movieApi';
+import { movieServerApi } from './api/serverApi';
 
 interface HomeProps {
     searchParams: {
@@ -9,7 +9,7 @@ interface HomeProps {
 }
 
 export default async function Home({ searchParams }: HomeProps) {
-    const data: MoviesResponse = await showMovies(searchParams.genre);
+    const data: MoviesResponse = await movieServerApi.showMovies(searchParams.genre);
     const results: MovieInfo[] = data.results;
 
     return (

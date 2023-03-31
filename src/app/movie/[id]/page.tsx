@@ -1,4 +1,4 @@
-import { getMovie } from '@/app/api/serverApi/movieApi';
+import { movieServerApi } from '@/app/api/serverApi';
 import { MovieInfo } from '@/types';
 import Image from 'next/image';
 
@@ -10,7 +10,7 @@ interface MoviePageProps {
 
 const MoviePage = async ({ params }: MoviePageProps) => {
     const movieId: string = params.id;
-    const movie: MovieInfo = await getMovie(movieId);
+    const movie: MovieInfo = await movieServerApi.getMovie(movieId);
     return (
         <>
             <div className="w-full">

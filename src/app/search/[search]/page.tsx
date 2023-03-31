@@ -1,4 +1,4 @@
-import { searchMovies } from '@/app/api/serverApi/movieApi';
+import { movieServerApi } from '@/app/api/serverApi';
 import Results from '@/components/Results';
 import { MovieInfo, MoviesResponse } from '@/types';
 
@@ -9,7 +9,7 @@ interface SearchPage {
 }
 
 const SearchPage = async ({ params }: SearchPage) => {
-    const data: MoviesResponse = await searchMovies(params.search);
+    const data: MoviesResponse = await movieServerApi.searchMovies(params.search);
     const results: MovieInfo[] = data.results;
     return (
         <>
