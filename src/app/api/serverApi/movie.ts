@@ -1,5 +1,5 @@
 import { MovieInfo, MoviesResponse } from '@/types';
-import { revalidateFetching, staticFetching } from './basicFetching';
+import { revalidateFetching, staticFetching } from './request';
 
 const API_KEY = process.env.NEXT_PUBLIC_API_KEY;
 
@@ -19,4 +19,14 @@ const searchMovies = async (search: string): Promise<MoviesResponse> => {
     return await staticFetching('/search/movie', params);
 };
 
-export { showMovies, getMovie, searchMovies };
+const movieServerApi: {
+    showMovies: (genre?: string) => Promise<MoviesResponse>;
+    getMovie: (movieId: string) => Promise<MovieInfo>;
+    searchMovies: (search: string) => Promise<MoviesResponse>;
+} = {
+    showMovies,
+    getMovie,
+    searchMovies,
+};
+
+export default movieServerApi;
