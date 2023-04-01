@@ -8,7 +8,7 @@ import './globals.css';
 
 export const metadata: Metadata = {
     title: 'IMDb Clone',
-    description: 'This i s the IMDb Clone website',
+    description: 'This is the IMDb Clone website',
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
