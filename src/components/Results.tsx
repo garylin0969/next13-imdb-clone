@@ -1,9 +1,9 @@
 import { MovieInfo } from '../types';
 import Card from './Card';
 
-interface ResultsProps {
+type ResultsProps = {
     results: MovieInfo[];
-}
+};
 
 const Results = ({ results }: ResultsProps) => {
     return (

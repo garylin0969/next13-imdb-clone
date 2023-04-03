@@ -2,10 +2,10 @@
 
 import { useEffect } from 'react';
 
-interface ErrorProps {
+type ErrorProps = {
     error: Error;
     reset: () => void;
-}
+};
 
 const Error = ({ error, reset }: ErrorProps) => {
     useEffect(() => {

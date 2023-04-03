@@ -2,11 +2,11 @@ import { movieServerApi } from '@/app/api/serverApi';
 import { MovieInfo } from '@/types';
 import Image from 'next/image';
 
-interface MoviePageProps {
+type MoviePageProps = {
     params: {
         id: string;
     };
-}
+};
 
 const MoviePage = async ({ params }: MoviePageProps) => {
     const movieId: string = params.id;

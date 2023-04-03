@@ -3,11 +3,11 @@ import Link from 'next/link';
 import { FiThumbsUp } from 'react-icons/fi';
 import { MovieInfo } from '../types';
 
-interface ResultProps {
+type CardProps = {
     result: MovieInfo;
-}
+};
 
-const Card = ({ result }: ResultProps) => {
+const Card = ({ result }: CardProps) => {
     return (
         <>
             <div className="cursor-pointer sm:p-3 sm:hover:shadow-slate-400 sm:shadow-md rounded-lg sm:border sm:border-slate-400 sm:m-2 transition-shadow duration-200 group">

@@ -3,10 +3,10 @@
 import Link from 'next/link';
 import { ReadonlyURLSearchParams, useSearchParams } from 'next/navigation';
 
-interface NavbarItemProps {
+type NavbarItemProps = {
     title: string;
     param: string;
-}
+};
 
 const NavbarItem = ({ title, param }: NavbarItemProps) => {
     const searchParams: ReadonlyURLSearchParams = useSearchParams();

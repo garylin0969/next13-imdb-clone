@@ -3,9 +3,9 @@
 import { ThemeProvider } from 'next-themes';
 import { ReactNode } from 'react';
 
-interface ProvidersProps {
+type ProvidersProps = {
     children: ReactNode;
-}
+};
 
 const Providers = ({ children }: ProvidersProps) => {
     return (
