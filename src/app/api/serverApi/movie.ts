@@ -1,7 +1,7 @@
 import { MovieInfo, MoviesResponse } from '@/types';
 import { revalidateFetching, staticFetching } from './request';
 
-const API_KEY = process.env.NEXT_PUBLIC_API_KEY;
+const API_KEY = process.env.NEXT_PRIVATE_API_KEY;
 
 const showMovies = async (genre?: string): Promise<MoviesResponse> => {
     const isTopRated: string = genre === 'fetchTopRated' ? 'movie/top_rated' : 'trending/all/week';
