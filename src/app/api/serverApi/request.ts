@@ -1,4 +1,4 @@
-import { baseURL } from '@/utils/constants';
+import { baseURL } from '@/constants/api';
 import objectUtils from '@/utils/objectUtils';
 import 'server-only';
 
