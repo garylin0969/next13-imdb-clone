@@ -2,13 +2,13 @@ import { movieServerApi } from '@/app/api/serverApi';
 import Results from '@/components/Results';
 import { MovieInfo, MoviesResponse } from '@/types';
 
-type SearchPage = {
+interface SearchPageProps {
     params: {
         search: string;
     };
-};
+}
 
-const SearchPage = async ({ params }: SearchPage) => {
+const SearchPage = async ({ params }: SearchPageProps) => {
     const data: MoviesResponse = await movieServerApi.searchMovies(params.search);
     const results: MovieInfo[] = data.results;
     return (

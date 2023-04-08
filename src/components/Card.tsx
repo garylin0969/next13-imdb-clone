@@ -3,9 +3,9 @@ import Link from 'next/link';
 import { FiThumbsUp } from 'react-icons/fi';
 import { MovieInfo } from '../types';
 
-type CardProps = {
+interface CardProps {
     result: MovieInfo;
-};
+}
 
 const Card = ({ result }: CardProps) => {
     return (
